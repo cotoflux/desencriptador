@@ -26,6 +26,7 @@ class ComposerStaticInit1f6d990083736d3c2a35d32b17568caa
         ),
         'P' => 
         array (
+            'Proyecto\\' => 9,
             'Prophecy\\' => 9,
         ),
         'D' => 
@@ -49,6 +50,10 @@ class ComposerStaticInit1f6d990083736d3c2a35d32b17568caa
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Proyecto\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Prophecy\\' => 
         array (
