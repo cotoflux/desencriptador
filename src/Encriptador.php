@@ -55,7 +55,7 @@ class Encriptador
         for($i = 0; $i<=$longTexto-1; $i++){
             $result = substr($this->inputTexto, $i);
             $devuelveResultado = $this->conversor($result);
-            $this->inputTextoEncripted += $devuelveResultado;
+            var_dump($this->inputTextoEncripted += $devuelveResultado);
         }
     }
 
