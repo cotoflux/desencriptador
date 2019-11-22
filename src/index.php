@@ -1,5 +1,6 @@
 <?php
     require_once '../vendor/autoload.php';
+    use Proyecto\Encriptador;
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,13 @@
 <body>
     
 
+    <?php
+    $primerEncriptado = new Encriptador();
+    $primerEncriptado->startEncription();
+    
+    echo $primerEncriptado->inputTextoEncripted . "<br><br><br>";
+    print_r($primerEncriptado->getKey());
+    ?>
     
 </body>
 </html>

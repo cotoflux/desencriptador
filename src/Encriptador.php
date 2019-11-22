@@ -3,20 +3,26 @@ namespace Proyecto;
 
 class Encriptador
 {
-    public $inputTexto;
+    public $inputTexto = 'Hola ';
     public $inputTextoEncripted="";
     private $clavePrivada;
     private $abecedario2=array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j',
     'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-    'y', 'z',' ');
+    'y', 'z', ' ');
 
-    function startEncription()
-    {
-        $this->inputTexto = 'Hola ';
-        return $this->inputTexto;
+    function setInputToLoweCaseText($introductionText){
+
+        return strtolower($introductionText);
     }
-
     
+    function startEncription()
+    {   
+        $this->keyGenerate();
+        $convertir=$this->inputTexto;
+        $valorAencriptar=$this->setInputToLoweCaseText($convertir);
+        $resultado=$this->encriptIt($valorAencriptar);
+        return $resultado;
+    }
 
     function keyGenerate()
     {
@@ -49,28 +55,25 @@ class Encriptador
         return $this->abecedario2;
     }
 
-    function encriptIt()
+    function encriptIt($valorAencriptar)
     {
-        $longTexto = strlen($this->inputTexto);
-        for($i = 0; $i<=$longTexto-1; $i++){
-            $result = substr($this->inputTexto, $i);
-            $devuelveResultado = $this->conversor($result);
-            //var_dump($this->inputTextoEncripted += $devuelveResultado);
+        $longTexto = str_split($valorAencriptar, 1);
+        foreach ($longTexto as  $char) {
+            $devuelveResultado = $this->conversor($char);
+            $this->inputTextoEncripted .= $devuelveResultado;
         }
     }
 
     function conversor($letraDesencriptada)
     {
-/*         $variableKey = $this->getKey();
-        return $variableKey[$letraDesencriptada]; */
+         $variableKey = $this->getKey();
+
+          return $variableKey[$letraDesencriptada];
         
     }
 
 }
 
-$primerEncriptado = new Encriptador();
-$primerEncriptado->startEncription();
-/* $primerEncriptado->keyGenerate();
-$primerEncriptado->encriptIt(); */
+
 
 
