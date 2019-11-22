@@ -6,14 +6,14 @@ class Encriptador
     public $inputTexto;
     public $inputTextoEncripted="";
     private $clavePrivada;
-    private $abecedario2=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j',
+    private $abecedario2=array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j',
     'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-    'y', 'z',' '];
+    'y', 'z',' ');
 
-    function strartEncription()
+    function startEncription()
     {
-        $textoEncript = $this->inputTexto = 'Hola ';
-        return $textoEncript;
+        $this->inputTexto = 'Hola ';
+        return $this->inputTexto;
     }
 
     
@@ -55,24 +55,22 @@ class Encriptador
         for($i = 0; $i<=$longTexto-1; $i++){
             $result = substr($this->inputTexto, $i);
             $devuelveResultado = $this->conversor($result);
-            var_dump($this->inputTextoEncripted += $devuelveResultado);
+            //var_dump($this->inputTextoEncripted += $devuelveResultado);
         }
     }
 
     function conversor($letraDesencriptada)
     {
-        $variableKey = $this->getKey();
-        $variableKey[$letraDesencriptada];
-        return $variableKey[$letraDesencriptada];
+/*         $variableKey = $this->getKey();
+        return $variableKey[$letraDesencriptada]; */
         
     }
 
 }
 
 $primerEncriptado = new Encriptador();
-$primerEncriptado->strartEncription();
-$primerEncriptado->keyGenerate();
-var_dump($primerEncriptado->keyGenerate());
-$primerEncriptado->encriptIt();
-var_dump($primerEncriptado->inputTextoEncripted);
+$primerEncriptado->startEncription();
+/* $primerEncriptado->keyGenerate();
+$primerEncriptado->encriptIt(); */
+
 
