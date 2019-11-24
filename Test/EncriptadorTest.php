@@ -6,12 +6,14 @@ use Proyecto\Encriptador;
 
 class EncriptadorTest extends TestCase
 {
+
     
     function testInputTextToEncript()
     {
         $inputTextUser = new Encriptador();
-        $EsperoQueRetorneHola = 'Hola ';
-        $valorDevueltoPorElMetodo=$inputTextUser->startEncription();
+        $valor = $inputTextUser->inputTexto;
+        $EsperoQueRetorneHola = 'hola ';
+        $valorDevueltoPorElMetodo=$inputTextUser->setInputToLoweCaseText($valor);
 
         $this->assertEquals($EsperoQueRetorneHola, $valorDevueltoPorElMetodo);
     }
@@ -32,6 +34,8 @@ class EncriptadorTest extends TestCase
         $valorDevueltoParaContarArray = $elementos->getAbecedario();
         $this->assertCount($valorEsperado, $valorDevueltoParaContarArray);
     }
+
+
 
 
 }
